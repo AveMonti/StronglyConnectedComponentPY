@@ -22,7 +22,6 @@ class Graph:
         visited[v]= True
         print v,
         valueList.append(v)
-        print(valueList)
         #Recur for all the vertices adjacent to this vertex
         for i in self.graph[v]:
             if visited[i]==False:
