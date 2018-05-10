@@ -1,4 +1,3 @@
-#https://www.geeksforgeeks.org/strongly-connected-components/
 # Python implementation of Kosaraju's algorithm to print all SCCs
 from collections import defaultdict
 
