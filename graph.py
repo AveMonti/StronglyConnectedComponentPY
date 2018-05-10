@@ -2,11 +2,13 @@
 # Python implementation of Kosaraju's algorithm to print all SCCs
 from collections import defaultdict
 
+valueList = []
 
 #This class represents a directed graph using adjacency list representation
 class Graph:
 
     def __init__(self,vertices):
+
         self.V= vertices #No. of vertices
         self.graph = defaultdict(list) # default dictionary to store graph
 
@@ -19,6 +21,8 @@ class Graph:
         # Mark the current node as visited and print it
         visited[v]= True
         print v,
+        valueList.append(v)
+        print(valueList)
         #Recur for all the vertices adjacent to this vertex
         for i in self.graph[v]:
             if visited[i]==False:
@@ -63,12 +67,14 @@ class Graph:
         visited =[False]*(self.V)
 
         # Now process all vertices in order defined by Stack
-        array = []
         while stack:
             i = stack.pop()
             if visited[i]==False:
+                if i != 0: valueList.append("->")
                 gr.DFSUtil(i, visited)
                 print""
+        return valueList
+
 
 if __name__ == '__main__':
     dic = [(1, 0),(0, 2),(2, 1),(0, 3),(3, 4)]

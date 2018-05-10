@@ -31,7 +31,7 @@ class Window(QtGui.QWidget):
         g = Graph(len(myGraph))
         for x in myGraph:
             g.addEdge(int(x[0]), int(x[1]))
-        g.printSCCs()
+        self.label.setText(str(g.printSCCs()))
 
         #drow
         G = nx.DiGraph()
